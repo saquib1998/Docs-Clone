@@ -16,7 +16,7 @@ app.use(cors({
   }));
 
 const store = new MongoDBStore({
-    uri: 'mongodb+srv://saquib1998:0MTznb98wPdlinyz@cluster0.inslkge.mongodb.net/', // MongoDB connection URI
+    uri: process.env.MongoUrl, // MongoDB connection URI
     collection: 'sessions', // Name of the sessions collection in MongoDB
     expires: 1000 * 60 * 60 * 24 * 7, // Session expiration time (7 days)
     connectionOptions: {
